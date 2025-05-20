@@ -1,33 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Hello from './Hello';
+import Hello2 from './Hello2';
+import Hello3 from './Hello3';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const divStyle = { color: 'tomato', height: 50 }
+
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <h1>Hello, React!</h1>
+      <h2>첫 번째 Component</h2>
+      <App2 />
+      <div style={{ height: 20, width: 200, color: 'red' }}>
+        점심 메뉴는 무엇이었나요?
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div style={divStyle}>
+        저는 라멘을 먹었습니다.
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+
+      <div className="App-header">
+        링크 CSS 적용
+      </div>
+      <Hello />
+      <Hello2 firstName='이' lastName='김'/>
+      <Hello2 firstName='삼' lastName='김'/>
+      <Hello3 firstName='사' lastName='김'/>
+    </>
+  )
+}
+
+function App2() {
+  return(
+    <>
+      <h2>안녕하세요.</h2>
     </>
   )
 }
